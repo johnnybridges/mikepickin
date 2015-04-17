@@ -35,7 +35,7 @@ module.exports = function (grunt) {
             },
             js: {
                 files: ['<%= config.app %>/scripts/{,*/}*.js'],
-                tasks: ['jshint'],
+                // tasks: ['jshint'],
                 options: {
                     livereload: true
                 }
@@ -296,14 +296,20 @@ module.exports = function (grunt) {
         // uglify: {
         //     dist: {
         //         files: {
-        //             '<%= config.dist %>/scripts/scripts.js': [
-        //                 '<%= config.dist %>/scripts/scripts.js'
+        //             '<%= config.dist %>/scripts/main.js': [
+        //                 '<%= config.app %>/scripts/main.js'
         //             ]
         //         }
         //     }
         // },
         // concat: {
-        //     dist: {}
+        //     dist: {
+        //         files: {
+        //             '<%= config.app %>/scripts/main.js': [
+        //                 '<%= config.dist %>/scripts/main.js'
+        //             ]
+        //         }
+        //     }
         // },
 
         // Copies remaining files to places other tasks can use
@@ -322,6 +328,13 @@ module.exports = function (grunt) {
                         'styles/fonts/{,*/}*.*'
                     ]
                 }]
+            },
+            scripts: {
+                expand: true,
+                dot: true,
+                cwd: '.tmp/concat/scripts',
+                dest: '<%= config.dist %>/scripts/',
+                src: '{,*/}*.js'
             },
             styles: {
                 expand: true,
@@ -361,6 +374,7 @@ module.exports = function (grunt) {
             dist: [
                 'sass',
                 'copy:styles',
+                'copy:scripts',
                 'imagemin',
                 'svgmin'
             ]
@@ -410,6 +424,7 @@ module.exports = function (grunt) {
         'concat',
         'cssmin',
         'copy:dist',
+        'copy:scripts',
         'modernizr',
         'rev',
         'usemin',
