@@ -1,0 +1,13 @@
+{
+  "name": "michael-pickin",
+  "private": true,
+  "version": "0.0.1",
+  "dependencies": {
+    "modernizr": "~2.8.3",
+    "normalize-css": "~3.0.3",
+    "neat": "~1.7.2",
+    "jquery": "~1.11.2",
+    "bitters": "~1.0.0"
+  },
+  "devDependencies": {}
+}

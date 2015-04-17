@@ -1,0 +1,368 @@
+// bower:scss
+@import 'bourbon';
+@import "variables";
+
+// Neat Settings -- uncomment if using Neat -- must be imported before Neat
+@import "grid-settings";
+@import 'neat';
+
+@import "buttons";
+@import "forms";
+@import "lists";
+@import "tables";
+@import "typography";
+
+$heading-font-family: 'Montserrat', sans-serif;
+$base-font-family: 'Hind', sans-serif;
+$sans-serif: $base-font-family;
+$serif: $heading-font-family;
+
+
+// endbower
+
+$linkColor: #4183C4;
+$hoverColor: lighten($linkColor, 10);
+$borderColor: #b3b3b3;
+$white: #ffffff;
+
+body,
+html {
+	min-height: 100%;
+	min-width: 100%;
+}
+
+body {
+	// @include outer-container;
+	-webkit-font-smoothing: antialiased;
+	font-family: $base-font-family;
+	background-color: #F6F6F6;
+}
+
+h1, h2, h3, h4, h5, h5, {
+	font-family: $heading-font-family;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+.type-system-slab {
+  $base-border-radius: 3px !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $base-link-color: $action-color !default;
+  $dark-gray: #333 !default;
+  $light-gray: #DDD !default;
+  $medium-screen: em(640) !default;
+  $base-font-color: $dark-gray !default;
+  // $sans-serif: 'Open Sans', sans-serif;
+  // $serif: 'Roboto Slab', serif;
+
+  @include clearfix;
+  text-align: left;
+
+  h1, h2, h3, p {
+    margin: 0;
+  }
+
+  hr {
+    border-bottom: 1px solid $light-gray;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin: $base-spacing 0;
+  }
+
+  p {
+    color: $base-font-color;
+    line-height: $base-line-height;
+  }
+
+  a {
+    color: $base-link-color;
+    text-decoration: none;
+  }
+
+  .type {
+    border-bottom: 1px solid;
+    display: inline-block;
+    font-family: $sans-serif;
+    font-size: 0.7em;
+    font-weight: 600;
+    margin-bottom: 2em;
+    padding: 0.1em 0;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-family: $serif;
+    font-size: 1.6em;
+    font-weight: 400;
+    margin-bottom: 0.6em;
+
+    @include media($medium-screen) {
+      font-size: 2.4em;
+    }
+  }
+
+  h2 {
+    font-family: $sans-serif;
+    font-size: 1.1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    margin-bottom: 1.2em;
+
+    @include media($medium-screen) {
+      font-size: 1.3em;
+    }
+  }
+
+  code {
+    background: #F7F7F7;
+    border-radius: $base-border-radius * 1.5;
+    border: 1px solid #E0E0E0;
+    font-size: 0.8em;
+    font-style: normal;
+    padding: 0.1em 0.4em;
+    white-space: nowrap;
+  }
+
+  h3 {
+   font-family: $serif;
+   font-size: 1em;
+   font-weight: 600;
+   line-height: 1.4em;
+   margin-bottom: 0.5em;
+   text-transform: uppercase;
+  }
+
+  h3.small {
+  	font-size: 0.8em;
+  	font-weight: 400;
+		color: #777777;
+		letter-spacing: 1.5px;
+  }
+
+  p.date {
+    color: transparentize($base-font-color, 0.6);
+    font-family: $sans-serif;
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    font-family: $sans-serif;
+    font-weight: 300;
+    letter-spacing: 1;
+    margin-bottom: 1.5em;
+
+    span {
+      font-family: $sans-serif;
+      font-size: 0.8em;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  a.read-more {
+    display: inline-block;
+    font-family: $serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-left: 0.2em;
+    position: relative;
+    text-transform: uppercase;
+
+    span {
+      font-size: 1.8em;
+      position: absolute;
+      right: -12px;
+      top: -2px;
+    }
+  }
+
+  hr {
+    width: 3em;
+  }
+
+  p.author {
+    font-family: $serif;
+  }
+}
+
+.full-screen {
+	min-height: 100%;
+	min-width: 100%;
+	display: block;
+	.bg-video,
+	.overlay,
+	.video-background-container {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		display: block;
+		z-index: 1;
+	}
+	.overlay {
+		background: rgba(99,0,0,0.70);
+		z-index: 2;
+	}
+}
+
+.intro {
+	&-text {
+		opacity: 0;
+		position: absolute;
+		z-index: 3;
+
+	}
+	&-head,
+	&-subhead {
+		color: white;
+		font-weight: 600;
+		text-align: center;
+	}
+
+	&-subhead {
+		/* MICHAEL PICKIN: */
+		font-size: 24px;
+		color: #B37D7D;
+		letter-spacing: 1.5px;
+		line-height: 29px;
+		margin-bottom: 0;
+	}
+	&-head {
+		/* UNLIMITED AEROBATICS: */
+		font-size: 48px;
+		color: #FFFFFF;
+		letter-spacing: 1.5px;
+		line-height: 57px;
+	}
+
+}
+
+.nav {
+	position: absolute;
+	bottom: 1em;
+	width: 100%;
+	text-align: center;
+	z-index: 5;
+	opacity: 0;
+	&-item {
+		display: inline-block;
+		font-family: $heading-font-family;
+		text-transform: uppercase;
+		padding: 1em;
+		font-size: 12px;
+		color: $white;
+		line-height: 14px;
+		&:hover,
+		&:active,
+		&:focus {
+			color: $white;
+			span {
+				padding-bottom: 2px;
+				border-bottom: 2px solid white;
+			}
+
+		}
+	}
+}
+
+
+
+
+.container {
+	@include outer-container;
+	// @include margin(25px null 25px null);
+	@include pad(2em);
+	background-color: white;
+	.main {
+		margin-bottom: 2em;
+	}
+}
+
+.container-social {
+	// display: inline-table;
+	width: 100%;
+	height: auto;
+	position: relative;
+	.container-social-item {
+		@include span-columns(4 of 12, table);
+		@include pad(5em 2em);
+		float: left;
+		background: red;
+		height: 200px;
+		&:nth-of-type(2n) {
+			background: $white;
+		}
+		p {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}
+
+.container-about {
+	@include row;
+	background: $white;
+	display: block;
+	.container-inner {
+		@include pad(5em);
+		@include span-columns(8);
+		@include shift(2);
+		text-align: center;
+	}
+	img {
+		margin-bottom: 2.5rem;
+	}
+	h3.small {
+		margin-bottom: 1.5rem;
+	}
+	h1 {
+		font-size: 40px;
+		color: #202020;
+		line-height: 55px;
+		text-transform: none;
+		margin-bottom: 1.5rem;
+	}
+}
+
+.container-sponsors {
+	@include row;
+	@include span-columns(8);
+	@include shift(2);
+	background: yellow;
+}
+
+.container-contact {
+	@include row;
+	@include pad(2em);
+	min-height: 460px;
+	background: url('/images/background-contact.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	.container-inner {
+		@include pad(2em);
+		@include span-columns(8);
+		@include shift(2);
+		background-color: $white;
+		text-align: center;
+		min-height: 250px;
+	}
+}
+
+.footer {
+	@include span-columns(12);
+	@include pad(2em 0);
+	font-size: em(14);
+	color: #777777;
+	text-align: center;
+	background: #202020;
+	a {
+		color: #777777;
+		&:hover {
+			color: $white;
+		}
+	}
+}
