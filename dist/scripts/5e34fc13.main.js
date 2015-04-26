@@ -62,6 +62,10 @@ $(document).ready(function() {
   $(".intro-text, .nav").delay(200).animate({
     opacity: 1
   }, 1250);
+  $('.sponsor-toggle.button').click(function(e) {
+    e.preventDefault();
+    $('.sponsor-toggle-text').toggle();
+  })
 });
 
 

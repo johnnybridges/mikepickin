@@ -197,6 +197,30 @@ h1, h2, h3, h4, h5, h5, {
   }
 }
 
+.button {
+  @extend button;
+  background: none;
+  border: #868686 1px solid;
+  color: #868686 !important;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-family: $heading-font-family;
+  font-size: 0.7em;
+  letter-spacing: 0.05em;
+  padding: 1em 1.25em;
+  @include media($medium-screen) {
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+    border: #868686 2px solid;
+  }
+  &:hover,
+  &:focus {
+    background: #868686;
+    color: #fff !important;
+  }
+}
+
+
 .full-screen {
   min-height: 100%;
   min-width: 100%;
@@ -267,11 +291,11 @@ h1, h2, h3, h4, h5, h5, {
   text-align: center;
   z-index: 5;
   opacity: 0;
-  background: transparentize($black, .5);
-  &:hover {
-    background: transparentize($black, 0);
-    cursor: pointer;
-  }
+  // background: transparentize($black, .5);
+  // &:hover {
+  //   background: transparentize($black, 0);
+  //   cursor: pointer;
+  // }
   &-item {
     display: inline-block;
     font-family: $heading-font-family;
@@ -469,6 +493,8 @@ h1, h2, h3, h4, h5, h5, {
     margin-bottom: 1em;
     @include media($medium-screen) {
       margin: 0;
+      @include span-columns(8);
+      @include shift(2);
     }
   }
   .sponsors-text {
@@ -496,23 +522,77 @@ h1, h2, h3, h4, h5, h5, {
       @include span-columns(8);
     }
   }
+  .sponsor-toggle.button-container {
+    text-align: center;
+    display: block;
+    button {
+      margin: 2em;
+    }
+  }
+  .sponsor-toggle-text {
+    background: #868686;
+    max-width: 640px;
+    font-family: $serif-body;
+    font-size: 1em;
+    @include pad(2em);
+    @include span-columns(12);
+    @include media($medium-screen) {
+      @include pad(2em);
+      font-size: 1.2em;
+      @include shift(2);
+      @include span-columns(8);
+      display: none;
+    }
+    p,
+    ul {
+      @include span-columns(12);
+      @include shift(0);
+      // font-size: .8em;
+      color: $white;
+      @include media($medium-screen) {
+        font-size: 1em;
+      }
+      a {
+        color: $white;
+        text-decoration: underline;
+      }
+    }
+    ul {
+      @include span-columns(12);
+      @include shift(0);
+      li {
+        list-style-type: disc;
+        margin-left: 2em;
+        line-height: 1.6em;
+        margin-bottom: 1em;
+      }
+    }
+    display: none;
+  }
 
 }
 
 .container-contact {
   @include row;
-  @include pad(2em);
+  @include pad(2em 0);
   min-height: 460px;
   background: url('/images/background-contact.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  @include media($medium-screen) {
+    @include pad(2em);
+  }
   .container-inner {
     @include pad(2em);
-    @include span-columns(8);
-    @include shift(2);
+    @include span-columns(10);
+    @include shift(1);
     background-color: $white;
     text-align: center;
     min-height: 250px;
+    @include media($medium-screen) {
+      @include span-columns(8);
+      @include shift(2);
+    }
   }
 }
 
@@ -528,5 +608,8 @@ h1, h2, h3, h4, h5, h5, {
     &:hover {
       color: $white;
     }
+  }
+  p {
+    margin: 0;
   }
 }
