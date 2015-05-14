@@ -741,6 +741,8 @@ label {
 
 #{$all-text-inputs},
 select[multiple=multiple],
+input,
+input[type=text],
 textarea {
   background-color: $base-background-color;
   border: $base-border;
