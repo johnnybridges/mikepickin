@@ -7,7 +7,9 @@
     "normalize-css": "~3.0.3",
     "neat": "~1.7.2",
     "jquery": "~1.11.2",
-    "bitters": "~1.0.0"
+    "bitters": "~1.0.0",
+    "skippr": "~1.1.0",
+    "headhesive.js": "~1.1.1"
   },
   "devDependencies": {}
 }

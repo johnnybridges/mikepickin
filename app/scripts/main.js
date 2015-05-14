@@ -65,7 +65,28 @@ $(document).ready(function() {
   $('.sponsor-toggle.button').click(function(e) {
     e.preventDefault();
     $('.sponsor-toggle-text').toggle();
-  })
+  });
+
+  // sticky nav
+
+  var headOptions = {
+    offset: ($(window).innerHeight())
+  }
+  var headhesive = new Headhesive('.nav', headOptions);
+
+
+  $(".media-gallery").skippr({
+        transition: 'slide',
+        speed: 1000,
+        easing: 'easeOutQuart',
+        navType: 'block',
+        childrenElementType: 'div',
+        arrows: true,
+        autoPlay: true,
+        autoPlayDuration: 6000,
+        keyboardOnAlways: true,
+        hidePrevious: false
+    });
 });
 
 
