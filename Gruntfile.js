@@ -323,7 +323,7 @@ module.exports = function (grunt) {
                     src: [
                         '*.{ico,png,txt}',
                         '.htaccess',
-                        'images/{,*/}*.webp',
+                        'images/{,*/}*.*',
                         '{,*/}*.html',
                         'styles/fonts/{,*/}*.*'
                     ]
@@ -375,8 +375,8 @@ module.exports = function (grunt) {
                 'sass',
                 'copy:styles',
                 'copy:scripts',
-                'imagemin',
-                'svgmin'
+                // 'imagemin',
+                // 'svgmin'
             ]
         }
     });
@@ -432,8 +432,8 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('default', [
-        'newer:jshint',
-        'test',
+        // 'newer:jshint',
+        // 'test',
         'build'
     ]);
 };
